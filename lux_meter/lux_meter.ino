@@ -26,6 +26,9 @@ float calculateLux(int x) {
   float a0 = 1.02186631e+08;
 
   // Calculate lux using the polynomial equation
+  if(x<800){
+    
+  }
   float lux = a4 * pow(x, 4) + a3 * pow(x, 3) + a2 * pow(x, 2) + a1 * x + a0;
   return lux;
 }
