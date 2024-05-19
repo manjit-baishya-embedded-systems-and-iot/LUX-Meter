@@ -6,7 +6,7 @@ void setup() {
 
 void loop() {
   int analogValue = analogRead(ldrPin); // Read the analog value from the LDR
-  float lux = calculateLux(analogValue); // Calculate light intensity in lux using the given equation
+  float lux = calculateLux(analogValue); // Calculate light intensity in lux using the polynomial equation
 
   Serial.print("Analog Value: ");
   Serial.print(analogValue);
@@ -18,12 +18,12 @@ void loop() {
 }
 
 float calculateLux(int x) {
-  // Polynomial equation coefficients (example for a 4th-degree polynomial)
-  float a4 = -1.05412039e-11;
-  float a3 = 7.54032268e-08;
-  float a2 = -1.98483678e-04;
-  float a1 = 2.36418983e-01;
-  float a0 = -1.07335165e+02;
+  // Polynomial equation coefficients for a 4th-degree polynomial
+  float a4 = 1.49971935e-04;
+  float a3 = -5.45547466e-01;
+  float a2 = 7.43741376e+02;
+  float a1 = -4.50342742e+05;
+  float a0 = 1.02186631e+08;
 
   // Calculate lux using the polynomial equation
   float lux = a4 * pow(x, 4) + a3 * pow(x, 3) + a2 * pow(x, 2) + a1 * x + a0;
