@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ESP32 Values</title>
-    <script>
-        async function fetchData() {
-            try {
-                let response = await fetch('http://192.168.1.45/');
-                let data = await response.json();
-                document.getElementById('value1').innerText = data.value1;
-                document.getElementById('value2').innerText = data.value2;
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUX Meter</title>
+    <link rel="stylesheet" href="styles.css">
 
-        setInterval(fetchData, 1000); // Fetch data every second
-    </script>
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body onload="fetchData()">
-    <h1>ESP32 Values</h1>
-    <p>Value 1: <span id="value1">0</span></p>
-    <p>Value 2: <span id="value2">0</span></p>
+<body>
+    <div class="lux-meter">
+        <div class="header">LUX Meter</div>
+        <div class="content">
+            <p>LDR Voltage: <span id="voltage">...</span> volts</p>
+            <p>Lux Value: <span id="lux">...</span> lux</p>
+            <div id="status-box" class="offline">Server Offline</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

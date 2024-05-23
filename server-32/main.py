@@ -50,6 +50,7 @@ server_socket.listen(1)
 
 print("Server started")
 
+
 # main loop
 while True:
     # wait for incoming connections

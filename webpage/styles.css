@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ff6c00;
+    font-family: 'Montserrat';
+}
+
+.lux-meter {
+    width: 500px;
+    height: 200px;
+    background-color: #D9D9D9;
+    border: 5px solid black;
+    position: relative;
+    
+}
+
+.header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    font-size: 1.5em;
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    font-weight: 800;
+}
+
+.content {
+    padding: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    color: black;
+    font-weight: 600;
+}
+
+#status-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1000;
+    border: 5px solid black;
+}
+
+#status-box.online {
+    background-color: #28a745;
+}
+
+#status-box.offline {
+    background-color: #dc3545;
+}

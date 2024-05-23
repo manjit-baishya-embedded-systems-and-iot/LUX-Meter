@@ -45,8 +45,8 @@ def connect_to_wifi(ssid, password, static_ip=None):
         print('Network connected at dynamic IP: http://', IP_address[0])
 
 # Replace these with your actual WiFi credentials
-ssid = 'HOME'
-password = 'BSNL_wifi@2569'
+ssid = '********'
+password = '********'
 desired_ip = ('192.168.1.45', '255.255.255.0', '192.168.1.1', '8.8.8.8')
 
 print_welcome_message()
